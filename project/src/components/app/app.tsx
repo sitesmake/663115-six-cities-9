@@ -1,4 +1,4 @@
-import MainScreen from '../main-screen/main-screen';
+import MainScreen from '../../screens/main-screen/main-screen';
 
 type AppScreenProps = {
   propertiesCount: number;
