@@ -1,11 +1,13 @@
 import MainScreen from '../../screens/main-screen/main-screen';
+import {Offer} from '../../types/offer';
 
 type AppScreenProps = {
-  propertiesCount: number;
+  propertiesCount: number,
+  offers: Offer[],
 }
 
-function App({propertiesCount}: AppScreenProps): JSX.Element {
-  return <MainScreen propertiesCount={propertiesCount} />;
+function App({offers, propertiesCount}: AppScreenProps): JSX.Element {
+  return <MainScreen offers={offers} propertiesCount={propertiesCount} />;
 }
 
 export default App;
