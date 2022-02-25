@@ -18,7 +18,7 @@ ReactDOM.render(
         <Route path={AppRoute.Login} element={<LoginScreen />} />
         <Route path={AppRoute.Favorites} element={
           <PrivateRoute>
-            <FavoritesScreen />
+            <FavoritesScreen favoritesIds={[2,3]} offers={offers} />
           </PrivateRoute>
         }
         />
