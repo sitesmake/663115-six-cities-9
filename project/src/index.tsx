@@ -22,7 +22,7 @@ ReactDOM.render(
           </PrivateRoute>
         }
         />
-        <Route path={AppRoute.Offer} element={<PropertyScreen />} />
+        <Route path={AppRoute.Offer} element={<PropertyScreen {...offers[0]} />} />
         <Route path="*" element={<NotFoundScreen />} />
       </Routes>
     </BrowserRouter>

@@ -1,6 +1,6 @@
 import Header from '../../components/header/header';
-import PropertyCard from '../../components/property-card/property-card';
 import {Offer} from '../../types/offer';
+import OffersList from '../../components/offers-list/offers-list';
 
 type MainScreenProps = {
   propertiesCount: number,
@@ -69,9 +69,7 @@ function MainScreen({offers, propertiesCount}: MainScreenProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                {offers.map((offer) => <PropertyCard {...offer} key={offer.id} />)}
-              </div>
+              <OffersList offers={offers} />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>

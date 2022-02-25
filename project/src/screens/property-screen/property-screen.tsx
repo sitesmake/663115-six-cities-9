@@ -1,6 +1,7 @@
 import Header from '../../components/header/header';
+import {Offer} from '../../types/offer';
 
-function PropertyScreen(): JSX.Element {
+function PropertyScreen(props: Offer): JSX.Element {
   return (
     <div className="page">
       <Header />
@@ -30,12 +31,13 @@ function PropertyScreen(): JSX.Element {
           </div>
           <div className="property__container container">
             <div className="property__wrapper">
-              <div className="property__mark">
-                <span>Premium</span>
-              </div>
+              {props.premium &&
+                <div className="property__mark">
+                  <span>Premium</span>
+                </div>}
               <div className="property__name-wrapper">
                 <h1 className="property__name">
-                  Beautiful &amp; luxurious studio at great location
+                  {props.title}
                 </h1>
                 <button className="property__bookmark-button button" type="button">
                   <svg className="property__bookmark-icon" width="31" height="33">
@@ -46,10 +48,10 @@ function PropertyScreen(): JSX.Element {
               </div>
               <div className="property__rating rating">
                 <div className="property__stars rating__stars">
-                  <span style={{width: '80%'}}></span>
+                  <span style={{width: `${props.rating*20}%`}}></span>
                   <span className="visually-hidden">Rating</span>
                 </div>
-                <span className="property__rating-value rating__value">4.8</span>
+                <span className="property__rating-value rating__value">{props.rating}</span>
               </div>
               <ul className="property__features">
                 <li className="property__feature property__feature--entire">
@@ -63,7 +65,7 @@ function PropertyScreen(): JSX.Element {
                 </li>
               </ul>
               <div className="property__price">
-                <b className="property__price-value">&euro;120</b>
+                <b className="property__price-value">&euro;{props.price}</b>
                 <span className="property__price-text">&nbsp;night</span>
               </div>
               <div className="property__inside">
