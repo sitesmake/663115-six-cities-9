@@ -1,4 +1,5 @@
 import {Offer} from '../../types/offer';
+import {Link} from 'react-router-dom';
 
 function PropertyCard(props: Offer): JSX.Element {
   return (
@@ -8,9 +9,9 @@ function PropertyCard(props: Offer): JSX.Element {
           <span>Premium</span>
         </div>}
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`offer/${props.id}`}>
           <img className="place-card__image" src={props.img} width="260" height="200" alt="Place image" />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
