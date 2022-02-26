@@ -8,6 +8,10 @@ type MainScreenProps = {
 }
 
 function MainScreen({offers, propertiesCount}: MainScreenProps): JSX.Element {
+  let activeOfferId = 0;
+
+  const setActiveOffer = (id:number) => activeOfferId = id;
+
   return (
     <div className="page page--gray page--main">
       <Header />
@@ -69,10 +73,11 @@ function MainScreen({offers, propertiesCount}: MainScreenProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <OffersList offers={offers} />
+              <OffersList offers={offers} setActiveOffer={setActiveOffer} />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
+              <span>active offer: {activeOfferId}</span>
             </div>
           </div>
         </div>
