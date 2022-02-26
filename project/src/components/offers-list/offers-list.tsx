@@ -3,7 +3,7 @@ import {Offer} from '../../types/offer';
 
 type OffersListProps = {
   offers: Offer[],
-  setActiveOffer: (id:number)=>number,
+  setActiveOffer: (id:number)=>void,
 }
 
 function OffersList({offers, setActiveOffer}: OffersListProps): JSX.Element {

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 type PropertyCardProps = {
   offer: Offer,
-  setActiveOffer: (id:number)=>number,
+  setActiveOffer: (id:number)=>void,
 }
 
 function PropertyCard({setActiveOffer, offer}: PropertyCardProps): JSX.Element {

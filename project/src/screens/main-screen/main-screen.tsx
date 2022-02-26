@@ -1,6 +1,7 @@
 import Header from '../../components/header/header';
 import {Offer} from '../../types/offer';
 import OffersList from '../../components/offers-list/offers-list';
+import {useState} from 'react';
 
 type MainScreenProps = {
   propertiesCount: number,
@@ -8,9 +9,7 @@ type MainScreenProps = {
 }
 
 function MainScreen({offers, propertiesCount}: MainScreenProps): JSX.Element {
-  let activeOfferId = 0;
-
-  const setActiveOffer = (id:number) => activeOfferId = id;
+  const [activeOfferId, setActiveOffer] = useState(0);
 
   return (
     <div className="page page--gray page--main">
