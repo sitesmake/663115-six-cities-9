@@ -1,6 +1,6 @@
 import Header from '../../components/header/header';
 import {Offer} from '../../types/offer';
-import FavoriteOfferCard from '../../components/favorite-offer-card/favorite-offer-card';
+import FavoriteOffers from '../../components/favorite-offers/favorite-offers';
 
 type FavoritesScreenProps = {
   favoritesIds: number[],
@@ -27,7 +27,7 @@ function FavoritesScreen({favoritesIds, offers}: FavoritesScreenProps): JSX.Elem
                   </div>
                 </div>
                 <div className="favorites__places">
-                  {favoriteOffers.map((offer: Offer) => <FavoriteOfferCard {...offer} key={offer.id} />)}
+                  <FavoriteOffers offers={favoriteOffers} />
                 </div>
               </li>
             </ul>
