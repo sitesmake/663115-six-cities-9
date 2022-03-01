@@ -1,11 +1,16 @@
 import Header from '../../components/header/header';
-import PropertyCard from '../../components/property-card/property-card';
+import {Offer} from '../../types/offer';
+import OffersList from '../../components/offers-list/offers-list';
+import {useState} from 'react';
 
 type MainScreenProps = {
-  propertiesCount: number;
+  propertiesCount: number,
+  offers: Offer[],
 }
 
-function MainScreen({propertiesCount}: MainScreenProps): JSX.Element {
+function MainScreen({offers, propertiesCount}: MainScreenProps): JSX.Element {
+  const [activeOfferId, setActiveOffer] = useState(0);
+
   return (
     <div className="page page--gray page--main">
       <Header />
@@ -67,16 +72,11 @@ function MainScreen({propertiesCount}: MainScreenProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                <PropertyCard />
-                <PropertyCard />
-                <PropertyCard />
-                <PropertyCard />
-                <PropertyCard />
-              </div>
+              <OffersList offers={offers} setActiveOffer={setActiveOffer} />
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
+              <span>active offer: {activeOfferId}</span>
             </div>
           </div>
         </div>
